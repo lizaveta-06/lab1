@@ -39,6 +39,7 @@ jobs:
           asset_path: ./helloworld-0.0.${{ github.run_number }}-Linux.deb
           asset_name: helloworld-0.0.${{ github.run_number }}-Linux.deb
           asset_content_type: application/vnd.debian.binary-package
+          
   build-windows:
     runs-on: windows-latest
     permissions: write-all
@@ -47,6 +48,6 @@ jobs:
         with:
           submodules: true
       - name: Configure CMake
-        run: cmake . -DPATCH_VERSION=${{ github.run_number }}
+        run: cmake -S . -B build -DPATCH_VERSION=${{ github.run_number }}
       - name: Build
-        run: cmake --build . --config Release
+        run: cmake --build build --config Release
