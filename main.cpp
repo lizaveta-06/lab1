@@ -2,8 +2,7 @@
 
 #include <iostream>
 
-int main (int, char **) {
-    std::cout << "Version: " << version() << std::endl;
-    std::cout << "Hello, world!" << std::endl;
+int main(int, char **) {
+    std::cout << "Hello, World! Version 1.0." << version() << std::endl;
     return 0;
 }
