@@ -1,4 +1,7 @@
 cmake_minimum_required(VERSION 3.30)
+if(POLICY CMP0167)
+    cmake_policy(SET CMP0167 OLD)
+endif()
 
 
 set(Boost_USE_STATIC_LIBS ON)
